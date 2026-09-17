@@ -1,0 +1,17 @@
+#include <iostream>
+#include <cmath>
+
+double ruletest() {
+    int ruler;
+    std::cout << "What was the measurement on the ruler? (in centimeters)" << std::endl;
+    std::cin >> ruler;
+ double numberins =  std::sqrt((2 * ruler) / 980.67);
+ double numberinms = numberins * 1000;
+    std::cout << "The reaction time is: " << numberinms << " milliseconds" << std::endl;
+    return numberinms;
+}
+
+int main() {
+    ruletest();
+    return 0;
+}
