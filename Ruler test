@@ -1,19 +1,36 @@
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <vector>
 
-double ruletest() {
-    int ruler;
-    std::cout << "What was the measurement on the ruler? (in centimeters)" << std::endl;
-    std::cin >> ruler;
- double numberins =  std::sqrt((2 * ruler) / 980.67);
- double numberinms = numberins * 1000;
-    std::cout << "The reaction time is: " << numberinms << " milliseconds" << std::endl;
-    return numberinms;
-}
+class Person {
+public:
+    std::string name;
+
+    void setName() {
+        std::cout << "What is the person's name? ";
+        std::cin >> name;
+    }
+
+    double rulerTest() {
+        int ruler;
+        std::cout << "What was the measurement on the ruler? (in centimeters)" << std::endl;
+        std::cin >> ruler;
+        double numberins = std::sqrt((2 * ruler) / 980.67);
+        double numberinms = numberins * 1000;
+        std::cout << "The reaction time is: " << numberinms << " milliseconds" << std::endl;
+        return numberinms;
+    }
+};
 
 int main() {
-    for (int i = 0; i < 5 ; i++) {
-    ruletest();
-}
+    std::vector<Person> people(5);
+    for (auto& person : people) {
+        person.setName();
+        for (int i = 0; i < 5; ++i) {
+            person.rulerTest();
+        }
+    }
+
     return 0;
 }
